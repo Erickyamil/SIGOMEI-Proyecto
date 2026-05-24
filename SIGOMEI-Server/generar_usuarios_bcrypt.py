@@ -23,6 +23,12 @@ usuarios = [
         "password": "Super@SIGOMEI1",
         "rol": "Supervisor",
     },
+    {
+        "id_usuario": "u-0003-super",
+        "correo": "super2@sigomei.mx",
+        "password": "Super@SIGOMEI2",
+        "rol": "Supervisor",
+    },
 ]
 
 print("-- ─────────────────────────────────────────────────────────")
@@ -30,7 +36,8 @@ print("-- Usuarios SIGOMEI con hashes bcrypt reales")
 print("-- Ejecutar en MySQL DESPUÉS de crear la BD (sigomei_bd.txt)")
 print("-- ─────────────────────────────────────────────────────────\n")
 print("USE sigomei_db;")
-print("DELETE FROM usuario WHERE id_usuario IN ('u-0001-admin','u-0002-super');\n")
+# Se actualizó el DELETE para incluir al tercer usuario
+print("DELETE FROM usuario WHERE id_usuario IN ('u-0001-admin', 'u-0002-super', 'u-0003-super');\n")
 
 for u in usuarios:
     hash_bytes = bcrypt.hashpw(u["password"].encode("utf-8"), bcrypt.gensalt(rounds=12))
