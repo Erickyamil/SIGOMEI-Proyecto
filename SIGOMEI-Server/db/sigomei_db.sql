@@ -190,8 +190,9 @@ CREATE INDEX idx_log_operacion ON log_auditoria (operacion);
 -- ──────────────────────────────────────────────────────────────────────────
 
 INSERT INTO usuario (id_usuario, correo, password_hash, rol) VALUES
-('u-0001-admin', 'admin@sigomei.mx',  '$2b$12$HASH_ADMIN_PLACEHOLDER', 'Administrador'),
-('u-0002-super', 'super@sigomei.mx',  '$2b$12$HASH_SUPER_PLACEHOLDER', 'Supervisor');
+('u-0001-admin', 'admin@sigomei.mx',  '$2b$12$cARvgmX6BVAkYvRFdfKv8Ovii9hCx8bztJPQWd0j3SlSrz3SAUr7q', 'Administrador'),
+('u-0002-super', 'super@sigomei.mx',  '$2b$12$60klIvEpO8oNnwXXUdgABOyb1tdQFI4eXjU8vO84Oh67G3oc8Pwka', 'Supervisor'),
+('u-0003-super', 'super2@sigomei.mx', '$2b$12$SL0ofEZUaJLrNejwJF427eL6t3FVGoJLKPy2X2gydfwY2yIO/7tlO', 'Supervisor');
 
 INSERT INTO equipo (id_equipo, nombre, tipo, marca, modelo, num_serie, ubicacion, fecha_instalacion, estado_operativo, criticidad) VALUES
 ('e-001', 'Compresor Norte',       'Mecánica',       'Atlas Copco','GX90',  'SER-001','Planta A', '2022-03-15','Operativo',        'Alta'),
